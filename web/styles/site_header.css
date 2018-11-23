@@ -1,0 +1,22 @@
+.site_header {
+
+    width: 100%;
+    height: 60px;
+
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+
+    background: rgba(0, 0, 0, 0.9 );
+
+}
+
+.header_content {
+
+    width: 59.5%;
+    height: 56px;
+    margin: auto;
+
+    border: 2px solid #EF3B3A;
+}

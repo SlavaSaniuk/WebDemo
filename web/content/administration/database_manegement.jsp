@@ -10,15 +10,20 @@
 <head>
 
     <!-- Import styles -->
-    <link rel="stylesheet" href="../../styles/template.css">
+    <link rel="stylesheet" href="../../styles/template.css"> <!-- Content style -->
+    <link rel="stylesheet" href="../../styles/site_header.css"> <!-- Header style -->
+
 
     <title> Database management </title>
 </head>
 <body>
 
+<!-- Include header to current JSP -->
+<%@include file="../content_page_elements/site_header.jsp" %>
+
     <div class="content">
 
-        <p> Hello world </p>
+
 
 
     </div>
