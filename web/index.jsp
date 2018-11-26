@@ -1,4 +1,4 @@
-<%--
+<%@ page import="by.bsac.config.MainConfig" %><%--
   Created by IntelliJ IDEA.
   User: user
   Date: 13.11.18
@@ -31,7 +31,6 @@
         </script>
 
       </form>
-
       <div class="err_msg">
         <p class="err_msg_text"> </p>
       </div>

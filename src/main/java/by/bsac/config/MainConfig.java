@@ -12,7 +12,7 @@ public class MainConfig implements ServletContextListener {
 
 
     //Class variables:
-    private String path_to_conf_directory; //Identify path to configuration files;
+    public static String path_to_conf_directory; //Identify path to configuration files;
     private ConnectionPoolImpl connection_pool; //Identify connection pool;
     private File database_properties; //File contain database properties;
 
@@ -25,8 +25,8 @@ public class MainConfig implements ServletContextListener {
     public void contextInitialized(ServletContextEvent sce) {
 
         //Setting class variables:
-        this.path_to_conf_directory = System.getenv("PROJECTS_BASE"); //Get path to configuration directory;
-        this.database_properties = new File(this.path_to_conf_directory //Get database.properties file;
+        path_to_conf_directory = System.getenv("PROJECTS_BASE"); //Get path to configuration directory;
+        this.database_properties = new File(path_to_conf_directory //Get database.properties file;
                 + File.separator + "WebDemo"
                 + File.separator + "database_properties.properties");
 
