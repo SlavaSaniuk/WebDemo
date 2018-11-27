@@ -8,6 +8,7 @@
 // 'user settings' icons:
     var icon = root_path +"/resources/img/gear_wheel_32x32.png"; //path to common icon
     var icon_active = root_path +"/resources/img/gear_wheel_32x32_hover.png"; //path to active icon
+    var user_setting_menu = document.getElementById("")
 
 
 /*

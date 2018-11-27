@@ -26,5 +26,31 @@ comment {
 
 .user_settings {
 
+    width: 20%;
+    height: 100%;
+    border: 2px solid red;
+    float: right;
+
+}
+
+.user_settings img{
+
+    float: right;
+    margin: 5px;
+
+}
+
+.user_settings menu{
+
+    display: none;
+
+    width: auto;
+
+    position: relative;
+    z-index: inherit;
+    background: #b3b3b3;
+
+    top: 30px;
+
 }
 

@@ -22,8 +22,14 @@
     <div class="header_content">
 
         <div class="user_settings">
+
             <img id="user_settings_icon" src="${pageContext.servletContext.contextPath}/resources/img/gear_wheel_32x32.png" alt="User settings"
                 onmouseover="changeToActiveIcon(this)" onmouseout="changeToCommonIcon(this)">
+
+            <menu id="user_settings_menu">
+                <li> Account settings </li>
+                <li> User settings </li>
+            </menu>
         </div>
 
     </div>

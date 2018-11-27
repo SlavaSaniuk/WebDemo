@@ -10,14 +10,47 @@ public class Account {
 
     //Constructor
     public Account(String user_name, String user_mail, String user_pass) {
+
         this.user_name = user_name;
         this.user_mail = user_mail;
         this.user_pass = user_pass;
+
+        this.setID();
+
     }
 
     //Method to set ID to user;
-    public void setID() {
+    private void setID() {
         this.user_id = current_id; //Set id to user;
         current_id++; //Increment current id value;
     }
+
+    public int getID() {
+        return user_id;
+    }
+
+    public String getUserName() {
+        return user_name;
+    }
+
+    public void setUserName(String user_name) {
+        this.user_name = user_name;
+    }
+
+    public String getUserMail() {
+        return user_mail;
+    }
+
+    public void setUserMail(String user_mail) {
+        this.user_mail = user_mail;
+    }
+
+    public String getUserPass() {
+        return user_pass;
+    }
+
+    public void setUserPass(String user_pass) {
+        this.user_pass = user_pass;
+    }
+
 }

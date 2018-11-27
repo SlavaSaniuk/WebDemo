@@ -1,10 +1,4 @@
-<%@ page import="by.bsac.config.MainConfig" %><%--
-  Created by IntelliJ IDEA.
-  User: user
-  Date: 13.11.18
-  Time: 0:06
-  To change this template use File | Settings | File Templates.
---%>
+
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html>
   <head>
@@ -19,10 +13,12 @@
 
     <div class="form">
 
-      <form class="register-form" method="post" onsubmit="">
-        <input type="text" id="user_name" placeholder="name"/>
-        <input type="password" id="user_pass" placeholder="password" onblur="validatePassword(this)" onkeyup="validatePassword(this)"/>
-        <input type="text" id="user_mail" placeholder="email address" onblur="validateMail(this, event)" onkeyup="validateMail(this, event)" />
+      <form class="register-form" method="post" action="${pageContext.request.contextPath}/registration" >
+        <input type="text" id="user_name" placeholder="name" name="user_name"/>
+        <input type="password" id="user_pass" placeholder="password" name="user_pass"
+                                onblur="validatePassword(this)" onkeyup="validatePassword(this)"/>
+        <input type="text" id="user_mail" placeholder="email address" name="user_mail"
+                                onblur="validateMail(this, event)" onkeyup="validateMail(this, event)" />
         <button type="submit" id="send_btn"> create </button>
 
         <!-- If JavaScript is enabled, disable submit button, before script is validate user arguments. -->
