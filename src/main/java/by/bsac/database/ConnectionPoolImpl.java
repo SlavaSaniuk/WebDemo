@@ -29,9 +29,9 @@ public class ConnectionPoolImpl implements ConnectionPool {
      */
 
     private Properties database_properties = new Properties(); //Database properties;
-    private static List<Connection> connection_pool; //Pool of free connections;
-    private static List<Connection> used_pool = new ArrayList<>(); //Pool of used connections;
-    private static int POOL_SIZE; //Size of connections pool;
+    public static List<Connection> connection_pool; //Pool of free connections;
+    public static List<Connection> used_pool = new ArrayList<>(); //Pool of used connections;
+    public static int POOL_SIZE; //Size of connections pool;
 
 
 
@@ -202,31 +202,6 @@ public class ConnectionPoolImpl implements ConnectionPool {
         connection_pool.add(unnecessary_connection);
 
     }
-
-    /*
-        Method to get number of used connections.
-        Return - number of used connections;
-     */
-    public static int getUsedConnectionsCount(){
-        return used_pool.size();
-    }
-
-    /*
-        Method to get number of unused connections.
-        Return - number of unused connections;
-     */
-    public static int getFreeConnectionsCount() {
-        return connection_pool.size();
-    }
-
-    /*
-        Method to get connection pool size.
-        Return - connection pool size;
-    */
-    public static int getPoolSize() {
-        return POOL_SIZE;
-    }
-
 
     /*
         Method to create a single database connection.

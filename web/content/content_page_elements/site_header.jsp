@@ -1,6 +1,4 @@
 
-
-
 <!--
     This 'comment' contains the path to the root directory of the application,
     in it's ID attribute.
@@ -11,7 +9,7 @@
 <!--
     Import JavaScript.
 -->
-<script src="${pageContext.servletContext.contextPath}/libs/user_settings_script.js"> </script>
+<script src="<%=pageContext.getServletContext().getContextPath()%>/libs/user_settings_script.js"> </script>
 
 
 <!--
@@ -21,15 +19,15 @@
 
     <div class="header_content">
 
-        <div class="user_settings">
+        <div class="user_settings" onmouseover="showUserSettingsMenu()" onmouseout="hideUserSettingsMenu()">
 
-            <img id="user_settings_icon" src="${pageContext.servletContext.contextPath}/resources/img/gear_wheel_32x32.png" alt="User settings"
-                onmouseover="changeToActiveIcon(this)" onmouseout="changeToCommonIcon(this)">
+            <img id="user_settings_icon" src="${pageContext.servletContext.contextPath}/resources/img/gear_wheel_32x32.png" alt="User settings">
 
             <menu id="user_settings_menu">
-                <li> Account settings </li>
-                <li> User settings </li>
+                <a href="<%=pageContext.getServletContext().getContextPath()%>/content/user/settings/account_settings.jsp"> <li> Account settings </li> </a>
+                <a href="<%=pageContext.getServletContext().getContextPath()%>/content/user/settings/user_settings.jsp"> <li> User settings </li> </a>
             </menu>
+
         </div>
 
     </div>

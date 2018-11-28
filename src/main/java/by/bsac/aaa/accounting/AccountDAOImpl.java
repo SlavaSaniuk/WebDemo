@@ -16,6 +16,7 @@ public class AccountDAOImpl implements AccountDAO {
      */
 
     private final String create_statement;
+    private final String find_by_statement;
 
 
     /*
@@ -28,7 +29,7 @@ public class AccountDAOImpl implements AccountDAO {
 
         //Initialize statements syntax;
         this.create_statement = "INSERT INTO " +db_table_name +"( user_id, user_name, user_mail, user_pass) VALUES (?, ?, ?, ?)";
-
+        this.find_by_statement = "SELECT * FROM account WHERE user_name = ?";
     }
 
 
@@ -39,13 +40,13 @@ public class AccountDAOImpl implements AccountDAO {
      */
 
     @Override
-    public Account findByName(Connection a_con, String a_name) throws SQLException {
+    public Account findBy(String a_name_or_mail) throws SQLException {
 
-        return null;
-    }
+        //Get free connection:
+        Connection con = ConnectionPoolImpl.getConnection();
 
-    @Override
-    public Account findByMail(Connection a_con, String a_mail) {
+
+
         return null;
     }
 

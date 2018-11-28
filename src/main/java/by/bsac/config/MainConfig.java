@@ -1,6 +1,8 @@
 package by.bsac.config;
 
 import by.bsac.database.ConnectionPoolImpl;
+import by.bsac.database.DatabaseManager;
+import by.bsac.model.Account;
 
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
@@ -35,6 +37,13 @@ public class MainConfig implements ServletContextListener {
             this.connection_pool = ConnectionPoolImpl.getInstance();
             connection_pool.create(this.database_properties);
         }
+
+        //Get last user id, increment them and set current user id:
+        {
+            int last_used_id = DatabaseManager.getLastAccountID(ConnectionPoolImpl.getConnection());
+            Account.current_id = last_used_id++;
+        }
+
 
     }
 

@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
 comment {
     display: none;
 }
@@ -27,8 +29,6 @@ comment {
 .user_settings {
 
     width: 20%;
-    height: 100%;
-    border: 2px solid red;
     float: right;
 
 }
@@ -36,21 +36,57 @@ comment {
 .user_settings img{
 
     float: right;
-    margin: 5px;
+    margin: 14px 5px 0 5px;
+
+
 
 }
 
 .user_settings menu{
 
     display: none;
+    background: rgba(0, 0, 0, 0.9 );
+
+    border-bottom: 2px solid #000000;
+    border-left: 2px solid #000000;
+    border-right: 2px solid #000000;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
 
     width: auto;
 
     position: relative;
     z-index: inherit;
-    background: #b3b3b3;
 
-    top: 30px;
+    top: 44px;
+
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+
+
+}
+
+.user_settings menu a{
+    text-decoration: none;
+    color: #FFFFFF;
+    outline: none;
+}
+
+.user_settings menu a:hover{
+    text-decoration: none;
+    color: #a7a5a5;
+
+}
+
+.user_settings menu a:visited{
+    text-decoration: none;
+
+}
+
+.user_settings menu li {
+
+    height: 30px;
+    list-style-type: none;
 
 }
 

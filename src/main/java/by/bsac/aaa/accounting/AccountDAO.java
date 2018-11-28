@@ -7,8 +7,7 @@ import java.sql.SQLException;
 
 public interface AccountDAO {
 
-    Account findByName(Connection a_con,  String a_name) throws SQLException;
-    Account findByMail(Connection a_con,  String a_mail);
+    Account findBy(String a_name_or_mail) throws SQLException;
 
     /*
         Method to create account in database;
