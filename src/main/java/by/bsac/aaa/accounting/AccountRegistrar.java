@@ -80,6 +80,7 @@ public class AccountRegistrar extends AbstractAccountDAO {
 
         //Release connection to database
         ConnectionPoolImpl.releaseConnection(this.dedicated_connection);
+        this.dedicated_connection.close();
     }
 
 
