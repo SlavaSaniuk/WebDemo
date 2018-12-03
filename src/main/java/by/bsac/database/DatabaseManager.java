@@ -26,25 +26,18 @@ public class DatabaseManager {
         int result = 0; //Max. user id
 
         //Create statement object
-        try(Statement stm = a_connection.createStatement()) {
-
-
+        try{
+            Statement stm = a_connection.createStatement();
             ResultSet rs = stm.executeQuery(stm_syntax);// Execute statement
 
             //Check result for emptiness
             if (!isEmpty(rs)) result = rs.getInt(1); //If not empty, get last account id
 
-            //Close connection
+            stm.close();
             a_connection.close();
 
         }catch (SQLException exc){
             exc.printStackTrace();
-        }finally {
-
-            //Force close connection object
-            if (a_connection != null){
-                a_connection = null;
-            }
         }
 
         return result; //Return result

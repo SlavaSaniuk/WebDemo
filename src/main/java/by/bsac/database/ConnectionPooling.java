@@ -7,12 +7,6 @@ import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.SQLException;
 
-    /*
-        This class represent a simple connection pool.
-        The class base at 'Singleton' pattern, because we need use only single connection pool per single JVM.
-        Use 'getInstance()' method, to create and get connection pool object.
-    */
-
 public class ConnectionPooling {
 
     /*
@@ -29,8 +23,7 @@ public class ConnectionPooling {
     --------------------------------------
      */
 
-    //Singleton pattern:
-    private ConnectionPooling() {
+    public ConnectionPooling() {
 
         try {
 
@@ -42,11 +35,6 @@ public class ConnectionPooling {
         }
 
     }
-    private static class ConnectionPoolingHelper {
-        private static final ConnectionPooling connection_pool = new ConnectionPooling();
-    }
-    //End of singleton pattern.
-
 
     /*
     --------------------------------------
@@ -54,21 +42,18 @@ public class ConnectionPooling {
     --------------------------------------
      */
 
-
-    /*
-        Method to create connection pool object.
-        Return - connection pool object;
-     */
-    public static ConnectionPooling getInstance() {
-        return ConnectionPoolingHelper.connection_pool;
-    }
-
     /*
         Method to get connection from DataSource;
         Return - connection;
      */
-    public synchronized static Connection getConnection() throws SQLException {
-        return ds.getConnection();
+    public static Connection getConnection() {
+        Connection con = null;
+        try{
+            con = ds.getConnection();
+        }catch(SQLException exc){
+            exc.printStackTrace();
+        }
+        return con;
     }
 
 

@@ -49,15 +49,4 @@ public class RegistrationServlet extends HttpServlet {
 
     }
 
-    @Override
-    public void destroy() {
-        try {
-
-            //Destroy all usage resources
-            this.registrar.destroy();
-
-        } catch (SQLException exc) {
-            exc.printStackTrace();
-        }
-    }
 }

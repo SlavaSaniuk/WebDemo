@@ -36,18 +36,18 @@ public class MainConfig implements ServletContextListener {
     public void contextInitialized(ServletContextEvent sce) {
 
         //Create connection pool and initialize them:
-            this.connection_pool = ConnectionPooling.getInstance();
+            this.connection_pool = new ConnectionPooling();
+        System.out.println("Connection pool initialized!");
 
 
         //Get last user id, increment them and set current user id:
         {
             int last_used_id = 0;
-            try {
+
+
                 last_used_id = DatabaseManager.getLastAccountID(ConnectionPooling.getConnection());
 
-            } catch (SQLException exc) {
-                exc.printStackTrace();
-            }
+
             last_used_id++;
             Account.current_id = last_used_id;
         }
