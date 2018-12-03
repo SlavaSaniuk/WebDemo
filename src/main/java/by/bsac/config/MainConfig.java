@@ -1,6 +1,6 @@
 package by.bsac.config;
 
-import by.bsac.database.ConnectionPoolImpl;
+import by.bsac.database.ConnectionPooling;
 import by.bsac.database.DatabaseManager;
 import by.bsac.model.Account;
 
@@ -8,6 +8,7 @@ import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
 import java.io.File;
+import java.sql.SQLException;
 
 @WebListener
 public class MainConfig implements ServletContextListener {
@@ -15,7 +16,7 @@ public class MainConfig implements ServletContextListener {
 
     //Class variables:
     public static String path_to_conf_directory; //Identify path to configuration files;
-    private ConnectionPoolImpl connection_pool; //Identify connection pool;
+    private ConnectionPooling connection_pool; //Identify connection pool;
     private File database_properties; //File contain database properties;
 
     /*
@@ -33,15 +34,20 @@ public class MainConfig implements ServletContextListener {
                 + File.separator + "database_properties.properties");
 
         //Create connection pool and initialize them:
-        {
-            this.connection_pool = ConnectionPoolImpl.getInstance();
-            connection_pool.create(this.database_properties);
-        }
+            this.connection_pool = ConnectionPooling.getInstance();
+
 
         //Get last user id, increment them and set current user id:
         {
-            int last_used_id = DatabaseManager.getLastAccountID(ConnectionPoolImpl.getConnection());
-            Account.current_id = last_used_id++;
+            int last_used_id = 0;
+            try {
+                last_used_id = DatabaseManager.getLastAccountID(ConnectionPooling.getConnection());
+
+            } catch (SQLException exc) {
+                exc.printStackTrace();
+            }
+            last_used_id++;
+            Account.current_id = last_used_id;
         }
 
 
@@ -56,7 +62,5 @@ public class MainConfig implements ServletContextListener {
 
     public void contextDestroyed(ServletContextEvent sce) {
 
-        //Destroy connection pool:
-        this.connection_pool.close();
     }
 }
