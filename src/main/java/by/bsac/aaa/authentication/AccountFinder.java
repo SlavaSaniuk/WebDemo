@@ -20,22 +20,18 @@ import java.util.ArrayList;
 
 public class AccountFinder extends AbstractAccountDAO {
 
-    /** SQL syntax of 'find_by_name' statement */
-    private final String find_by_name_stx = "SELECT * FROM account WHERE user_name = ?";
-
-    /** SQL syntax of 'find_by_mail' statement */
-    private final String find_by_mail_stx = "SELECT * FROM account WHERE user_mail = ?";
-    
     /**
      * Method find accounts in database by user name.
      * @param a_name - looking user name.
      * @return array of founded accounts, or 'null' - if such accounts does not exist.
-     * @exception  SQLException
      */
     @Override
     public synchronized Account[] findByName(String a_name) {
 
-        return this.findBy(this.find_by_name_stx, a_name);
+        // SQL syntax of 'find_by_name' statement
+        String find_by_name_stx = "SELECT * FROM account WHERE user_name = ?";
+
+        return this.findBy(find_by_name_stx, a_name);
 
     }
 
@@ -43,12 +39,14 @@ public class AccountFinder extends AbstractAccountDAO {
      * Method find accounts in database by user mail.
      * @param a_mail - looking user mail.
      * @return array of founded accounts, or 'null' - if such accounts does not exist.
-     * @exception  SQLException
      */
     @Override
     public synchronized Account[] findByMail(String a_mail) {
 
-        return this.findBy(this.find_by_mail_stx, a_mail);
+        // SQL syntax of 'find_by_mail' statement
+        String find_by_mail_stx = "SELECT * FROM account WHERE user_mail = ?";
+
+        return this.findBy(find_by_mail_stx, a_mail);
 
     }
 
