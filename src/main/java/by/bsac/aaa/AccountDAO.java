@@ -1,4 +1,4 @@
-package by.bsac.aaa.accounting;
+package by.bsac.aaa;
 
 import by.bsac.model.Account;
 
@@ -7,7 +7,7 @@ import java.sql.SQLException;
 
 public interface AccountDAO {
 
-    Account[] findByName(String a_name);
+    Account[] findByName(String a_name) throws SQLException;
     Account[] findByMail(String a_mail);
 
     /*

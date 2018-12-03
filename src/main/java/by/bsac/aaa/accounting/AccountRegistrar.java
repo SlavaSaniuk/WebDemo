@@ -1,5 +1,6 @@
 package by.bsac.aaa.accounting;
 
+import by.bsac.aaa.AbstractAccountDAO;
 import by.bsac.database.ConnectionPooling;
 import by.bsac.model.Account;
 
@@ -22,7 +23,9 @@ public class AccountRegistrar extends AbstractAccountDAO {
     --------------------------------------
      */
 
-    public AccountRegistrar() { }
+    public AccountRegistrar() {
+        super();
+    }
 
 
     /*

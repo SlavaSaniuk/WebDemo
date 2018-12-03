@@ -1,4 +1,4 @@
-package by.bsac.aaa.accounting;
+package by.bsac.aaa;
 
 import by.bsac.model.Account;
 
@@ -41,7 +41,7 @@ public abstract class AbstractAccountDAO implements AccountDAO {
 
 
     @Override
-    public Account[] findByName(String a_name) {
+    public Account[] findByName(String a_name) throws SQLException {
         return null;
     }
 
