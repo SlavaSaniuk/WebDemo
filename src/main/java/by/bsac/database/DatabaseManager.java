@@ -9,21 +9,6 @@ public class DatabaseManager {
 
     /*
     --------------------------------------
-    ---------- Class variables -----------
-    --------------------------------------
-     */
-
-
-
-    /*
-    --------------------------------------
-    ---------- Class constructors --------
-    --------------------------------------
-     */
-
-
-    /*
-    --------------------------------------
     ---------- Class methods -------------
     --------------------------------------
      */
@@ -49,54 +34,21 @@ public class DatabaseManager {
             //Check result for emptiness
             if (!isEmpty(rs)) result = rs.getInt(1); //If not empty, get last account id
 
+            //Close connection
+            a_connection.close();
+
         }catch (SQLException exc){
             exc.printStackTrace();
         }finally {
-            //Release connection
-            ConnectionPoolImpl.releaseConnection(a_connection);
+
+            //Force close connection object
+            if (a_connection != null){
+                a_connection = null;
+            }
         }
 
         return result; //Return result
 
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    /*
-        Method to get number of used connections.
-        Return - number of used connections;
-    */
-    public static int getUsedConnectionsCount(){
-        return ConnectionPoolImpl.used_pool.size();
-    }
-
-    /*
-        Method to get number of unused connections.
-        Return - number of unused connections;
-     */
-    public static int getFreeConnectionsCount() {
-        return ConnectionPoolImpl.connection_pool.size();
-    }
-
-    /*
-        Method to get connection pool size.
-        Return - connection pool size;
-    */
-    public static int getPoolSize() {
-        return ConnectionPoolImpl.POOL_SIZE;
     }
 
     /*
@@ -107,11 +59,7 @@ public class DatabaseManager {
     */
     private static boolean isEmpty( ResultSet a_result) throws SQLException {
 
-        if(a_result.next()){
-            return false;
-        }else {
-            return true;
-        }
+        return !a_result.next();
     }
 
 }
