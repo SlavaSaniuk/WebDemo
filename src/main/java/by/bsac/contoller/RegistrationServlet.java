@@ -1,7 +1,6 @@
 package by.bsac.contoller;
 
-import by.bsac.aaa.accounting.AccountDAOImpl;
-import by.bsac.database.ConnectionPoolImpl;
+import by.bsac.aaa.accounting.AccountRegistrar;
 import by.bsac.model.Account;
 
 import javax.servlet.ServletException;
@@ -18,14 +17,14 @@ public class RegistrationServlet extends HttpServlet {
     /*
         Servlet global variables:
     */
-    private AccountDAOImpl account_mng;
+    private AccountRegistrar registrar; //Object used to registrate accounts in database;
 
 
     @Override
     public void init() throws ServletException {
 
         //Initialize account manager for 'account' table;
-        this.account_mng = new AccountDAOImpl("account");
+        this.registrar = new AccountRegistrar();
     }
 
 
@@ -40,13 +39,25 @@ public class RegistrationServlet extends HttpServlet {
 
         //Create new account in database:
         try {
-            this.account_mng.create(ConnectionPoolImpl.getConnection(), new Account(user_name,user_mail,user_pass));
+            this.registrar.create(new Account(user_name,user_mail,user_pass));
         } catch (SQLException exc) {
             exc.printStackTrace();
         }
 
-        //I true - redirect to user page.
+        //If true - redirect to user page.
         resp.sendRedirect(getServletContext().getContextPath() +"/content/user/user_page.jsp");
 
+    }
+
+    @Override
+    public void destroy() {
+        try {
+
+            //Destroy all usage resources
+            this.registrar.destroy();
+
+        } catch (SQLException exc) {
+            exc.printStackTrace();
+        }
     }
 }

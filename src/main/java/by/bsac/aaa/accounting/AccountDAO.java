@@ -7,17 +7,17 @@ import java.sql.SQLException;
 
 public interface AccountDAO {
 
-    Account findBy(String a_name_or_mail) throws SQLException;
+    Account[] findByName(String a_name);
+    Account[] findByMail(String a_mail);
 
     /*
         Method to create account in database;
         Parameters:
-        Parameter 1: Free connection to database;
-        Parameter 2: User account;
+        Parameter 1: User account;
         Return: nothing;
         Exception: SQL exception;
      */
-    void create(Connection a_con,  Account a_account) throws SQLException;
+    void create(Account a_account) throws SQLException;
 
 
 

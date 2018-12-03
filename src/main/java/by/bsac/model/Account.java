@@ -19,6 +19,15 @@ public class Account {
 
     }
 
+    public Account(int id, String user_name, String user_mail, String user_pass) {
+
+        this.user_id = id;
+        this.user_name = user_name;
+        this.user_mail = user_mail;
+        this.user_pass = user_pass;
+
+    }
+
     //Method to set ID to user;
     private void setID() {
         this.user_id = current_id; //Set id to user;
