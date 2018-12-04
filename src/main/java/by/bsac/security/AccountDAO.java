@@ -1,4 +1,4 @@
-package by.bsac.aaa;
+package by.bsac.security;
 
 import by.bsac.model.Account;
 

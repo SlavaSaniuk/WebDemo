@@ -1,6 +1,6 @@
-package by.bsac.aaa.accounting;
+package by.bsac.security.accounting;
 
-import by.bsac.aaa.AbstractAccountDAO;
+import by.bsac.security.AbstractAccountDAO;
 import by.bsac.database.ConnectionPooling;
 import by.bsac.model.Account;
 

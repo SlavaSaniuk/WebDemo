@@ -1,6 +1,6 @@
 package by.bsac.contoller;
 
-import by.bsac.aaa.accounting.AccountRegistrar;
+import by.bsac.security.accounting.AccountRegistrar;
 import by.bsac.model.Account;
 
 import javax.servlet.ServletException;

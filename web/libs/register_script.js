@@ -5,7 +5,11 @@
 //Minimal password length;
 var MIN_PASSWORD_LENGTH = 8;
 
-//Error messages array
+/**
+ * Array contain error strings.
+ * For name, password, mail.
+ * @type {string[]} - error string.
+ */
 var error_messages = [
     "Password must not be empty",
     "Password must contain a minimum of 8 characters",

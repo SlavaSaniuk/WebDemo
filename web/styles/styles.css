@@ -46,14 +46,28 @@
     opacity: 0.3;
 }
 
+/*
+    Login form ---
+ */
+
+.login-form {
+
+    display: none;
+}
+
+
+
+
+
 .form .message {
     margin: 15px 0 0;
     color: #b3b3b3;
-    font-size: 12px;
+    font-size: 14px;
 }
-.form .message a {
+.form a {
     color: #4CAF50;
     text-decoration: none;
+    font-size: 14px;
 }
 .form .register-form {
     display: block;
@@ -91,6 +105,10 @@
 .container .info span .fa {
     color: #EF3B3A;
 }
+
+/*
+    Error messages div
+*/
 
 .err_msg {
     display: none;

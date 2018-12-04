@@ -1,6 +1,6 @@
-package by.bsac.aaa.authentication;
+package by.bsac.security.authentication;
 
-import by.bsac.aaa.AbstractAccountDAO;
+import by.bsac.security.AbstractAccountDAO;
 import by.bsac.database.ConnectionPooling;
 import by.bsac.model.Account;
 
@@ -83,7 +83,7 @@ public class AccountFinder extends AbstractAccountDAO {
 
         //Check on emptiness
         if (accounts.isEmpty()) return null;
-        else return (Account[]) accounts.toArray();
+        else return (Account[]) accounts.toArray(new Account[0]);
 
     }
 
