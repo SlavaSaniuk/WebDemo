@@ -25,7 +25,17 @@ function changeForm(a_link) {
     var active_form_name = a_link.getAttribute("name"); //Name of active form
     var form_names = ["registration", "login"]; //Array of available form names
 
-    
+
+    //Detect, which form active now
+    if(active_form_name === form_names[0]) {
+
+        //If registration form active now:
+        a_link.setAttribute("name", form_names[1]) //Set new attribute
+
+
+    }
+
+
 
 
 
