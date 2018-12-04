@@ -72,7 +72,7 @@
         <p class="err_msg_text"> </p>
       </div>
 
-        <p class="message"> Already registered? </p> <a onclick="changeForm(this)" id="change_link" name="registration" href="#" >Sign In</a>
+        <p class="message"> Already registered? </p> <a onclick="changeForm(this)" id="form_switch" name="registration" href="#" >Sign In</a>
 
         <!-- If JavaScript is enabled, prevent link transition -->
         <script>
