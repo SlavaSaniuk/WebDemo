@@ -29,14 +29,14 @@ var user_account = {
 ************** Script global variables ***********
 */
 
-/*
+/**
     Function to check on valid user mail.
     *Mail must not be empty.
     *Mail must contain @ sign.
     Parameter - user mail.
     Return: true - if mail is valid;
             false - if mail in not valid;
- */
+
 function validateMail(user_mail, caller_event) {
 
     var mail_value = document.getElementById(user_mail.id).value; // local variable contain user mail address;
@@ -73,16 +73,17 @@ function validateMail(user_mail, caller_event) {
     this.switchSendingButton(false); //Enabling sending button;
     return true;
 }
+ */
 
+/**
 
-/*
         Function to check on valid user password.
         *Password must not be empty.
         *Password must contain a minimum of 8 characters.
         Parameter - user password.
         Return: true - if password is valid;
                 false - if password in not valid;
-     */
+
 function validatePassword(user_password) {
 
     var password_length = document.getElementById(user_password.id).value.length; // local variable contain number of password characters// ;
@@ -109,6 +110,7 @@ function validatePassword(user_password) {
     this.switchSendingButton(false); //Enabling sending button;
     return true;
 }
+*/
 
 
 /*  Function to switch sending button.

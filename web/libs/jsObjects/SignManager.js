@@ -64,5 +64,9 @@ function SignManager() {
         error_message_paragraph.style.display = "none"; //Hide error message paragraph;
 
     };
-    
+
+
+
+
 }
+

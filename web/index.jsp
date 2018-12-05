@@ -1,10 +1,9 @@
-<%@ page import="static java.lang.Boolean.FALSE" %>
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html>
   <head>
 
     <%!
-        private Boolean authenticated = Boolean.valueOf(FALSE); //Session authenticated attribute
+        private Boolean authenticated = Boolean.FALSE; //Session authenticated attribute
     %>
 
     <%
@@ -17,8 +16,7 @@
 
     <script src="libs/jsObjects/SignManager.js"> </script>
     <script src="libs/SignScript.js"> </script>
-    <script src="libs/register_script.js"> </script>
-    <script src="libs/login_script.js"> </script>
+
     <title> Hello </title>
   </head>
   <body onload="init()">
@@ -33,13 +31,14 @@
 
         <input type="hidden" name="form_function" value="registration_form" />
 
-        <input type="text" id="user_name" placeholder="name" name="user_name" oninput="validateName(this)"/>
+        <input type="text" id="user_name" placeholder="name" name="user_name"
+               oninput="validateName(this)"/>
 
         <input type="password" id="user_pass" placeholder="password" name="user_pass"
-                                onblur="validatePassword(this)" onkeyup="validatePassword(this)"/>
+               oninput="validatePassword(this)"/>
 
         <input type="text" id="user_mail" placeholder="email address" name="user_mail"
-                                onblur="validateMail(this, event)" onkeyup="validateMail(this, event)" />
+               oninput="validateMail(this)" />
 
         <button type="submit" id="send_btn"> sign up </button>
 
