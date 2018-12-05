@@ -10,12 +10,8 @@ var MIN_PASSWORD_LENGTH = 8;
  * For name, password, mail.
  * @type {string[]} - error string.
  */
-var error_messages = [
-    "Password must not be empty",
-    "Password must contain a minimum of 8 characters",
-    "Email must not be empty",
-    "Email must be a valid"
-];
+
+
 
 // *Identify user account
 var user_account = {

@@ -14,11 +14,14 @@
 
     <link rel="stylesheet" href="styles/template.css">
     <link rel="stylesheet" href="styles/styles.css">
+
+    <script src="libs/jsObjects/SignManager.js"> </script>
+    <script src="libs/SignScript.js"> </script>
     <script src="libs/register_script.js"> </script>
     <script src="libs/login_script.js"> </script>
     <title> Hello </title>
   </head>
-  <body>
+  <body onload="init()">
 
   <div class="login-page">
 
@@ -30,7 +33,7 @@
 
         <input type="hidden" name="form_function" value="registration_form" />
 
-        <input type="text" id="user_name" placeholder="name" name="user_name"/>
+        <input type="text" id="user_name" placeholder="name" name="user_name" oninput="validateName(this)"/>
 
         <input type="password" id="user_pass" placeholder="password" name="user_pass"
                                 onblur="validatePassword(this)" onkeyup="validatePassword(this)"/>
@@ -68,9 +71,9 @@
       </form>
 
 
-      <div class="err_msg">
-        <p class="err_msg_text"> </p>
-      </div>
+        <!-- If JavaScript detect a in valid => show error message -->
+        <p id="err_msg"> </p>
+
 
         <p class="message"> Already registered? </p> <a onclick="changeForm(this)" id="form_switch" name="registration" href="#" >Sign In</a>
 

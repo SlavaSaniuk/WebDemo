@@ -106,16 +106,16 @@
     color: #EF3B3A;
 }
 
+
 /*
     Error messages div
 */
 
-.err_msg {
+
+
+
+#err_msg{
     display: none;
     width: 100%;
-    height: 50px;
-}
-
-.err_msg_text {
     color: #EF3B3A;
 }

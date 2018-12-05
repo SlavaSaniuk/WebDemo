@@ -4,10 +4,7 @@
  * For login, password input.
  * @type {string[]} - error string.
  */
-var error_messages = [
-    "Name or mail must not be empty",
-    "Password must not be empty"
-];
+
 
 
 /**
@@ -15,7 +12,7 @@ var error_messages = [
  *  From 'registration' to 'login' form, and vice versa.
  *  @Paramater a_link - link to 'change_form' control element.
  *  @Return - nothing.
- */
+
 function changeForm(a_link) {
 
     //Getting elements
@@ -68,6 +65,7 @@ function changeForm(a_link) {
     }
 
 }
+ */
 
 /**
  *  Functions validating user login.
