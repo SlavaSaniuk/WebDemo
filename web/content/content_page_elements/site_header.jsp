@@ -9,7 +9,7 @@
 <!--
     Import JavaScript.
 -->
-<script src="<%=pageContext.getServletContext().getContextPath()%>/libs/user_settings_script.js"> </script>
+<script src="<%=pageContext.getServletContext().getContextPath()%>/libs/UserSettingsScript.js"> </script>
 
 
 <!--

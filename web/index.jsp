@@ -27,7 +27,8 @@
 
 
       <!-- Registration form -->
-      <form class="register-form" method="post" action="${pageContext.request.contextPath}/registration" >
+      <form class="register-form" method="post" action="${pageContext.request.contextPath}/registration"
+            onsubmit="return validateAllInputs();" >
 
         <input type="hidden" name="form_function" value="registration_form" />
 
@@ -40,32 +41,30 @@
         <input type="text" id="user_mail" placeholder="email address" name="user_mail"
                oninput="validateMail(this)" />
 
-        <button type="submit" id="send_btn"> sign up </button>
+        <button type="submit" id="reg_sub_btn"> sign up </button>
 
         <!-- If JavaScript is enabled, disable submit button, before script is validate user arguments. -->
         <script>
-          document.getElementById("send_btn").disabled = true;
+          document.getElementById("reg_sub_btn").disabled = true;
         </script>
 
       </form>
 
         <!-- login form -->
-      <form class="login-form" method="post" action="${pageContext.request.contextPath}/login" >
+      <form class="login-form" method="post" action="${pageContext.request.contextPath}/login"
+            onsubmit="return validateAllInputs()">
 
           <input type="hidden" name="form_function" value="login_form" />
 
           <input type="text" id="user_login" placeholder="name or mail" name="user_login"
-                 onblur="validateLogin(this)" onkeyup="validateLogin(this)" />
+                 oninput="validateName(this)" />
 
-          <input type="password" id="login_user_pass" placeholder="password" name="user_pass"
-                 onblur="validateLoginPassword(this)" onkeyup="validateLoginPassword(this)" />
+          <input type="password" id="log_user_pass" placeholder="password" name="user_pass"
+                 oninput="validatePassword(this)"/>
 
-          <button type="submit" id="login_send_btn"> sign in </button>
+          <button type="submit" id="log_sub_btn"> sign in </button>
 
-          <!-- If JavaScript is enabled, disable submit button, before script is validate user arguments. -->
-          <script>
-              document.getElementById("login_send_btn").disabled = true;
-          </script>
+
 
       </form>
 
@@ -74,13 +73,7 @@
         <p id="err_msg"> </p>
 
 
-        <p class="message"> Already registered? </p> <a onclick="changeForm(this)" id="form_switch" name="registration" href="#" >Sign In</a>
-
-        <!-- If JavaScript is enabled, prevent link transition -->
-        <script>
-            document.getElementById("change_link").addEventListener("click", function(event){event.preventDefault()});
-        </script>
-
+        <p class="message"> Already registered? </p> <a onclick="changeForm()" id="form_switch" name="registration" href="#" >Sign In</a>
 
     </div>
 
