@@ -20,7 +20,7 @@ function SignManager() {
      * Function mark user input as valid of invalid input.
      * Set red border around invalid input.
      * Set common border around  valid input.
-     * @param a_input - invalid input.
+     * @param a_input - object: invalid input.
      * @param valid - boolean: true - if input is valid;
      *                         false - if input is invalid;
      * @return - nothing.
@@ -44,7 +44,7 @@ function SignManager() {
 
     /**
      * Function show error message paragraph, and set error message text to them.
-     * @param error_message - text of error message.
+     * @param error_message - String: text of error message.
      * @return - nothing.
      */
     this.showErrMessage = function(error_message) {
@@ -65,6 +65,31 @@ function SignManager() {
 
     };
 
+    /**
+     * Function toggle submit button.
+     * @param btn_link - object: link on submit button;
+     * @param a_enable - boolean: true - enable submit button.
+     *                            false - disable submit button.
+     * @return - nothing;
+     */
+    this.toggleSubBtn = function(btn_link, a_enable) {
+
+        if (a_enable === true) btn_link.disabled = false; //Enable submit button;
+        if (a_enable === false) btn_link.disabled = true; //Disable submit button;
+    };
+
+    /**
+     *  Function detect which form is active.
+     *  @param a_form_switch - object: link on form switch element;
+     *  @return String - active form name;
+     */
+    this.getActiveFormName = function(a_form_switch) {
+
+        var active_form_name = a_form_switch.getAttribute("name");
+
+        if (active_form_name === "registration") return "registration";
+        if (active_form_name === "login") return "login";
+    };
 
 
 
